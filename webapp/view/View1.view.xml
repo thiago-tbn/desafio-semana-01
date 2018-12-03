@@ -1,0 +1,28 @@
+<mvc:View controllerName="desafio-semana-01.desafio-semana-01.controller.View1" 
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" 
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>Busca CEP}">
+				<content>
+					<VBox>
+						<f:SimpleForm id="SimpleFormDisplayColumn_oneGroup" editable="true" layout="ResponsiveGridLayout" title="VIACEP">
+							<f:content> 
+								<Label labelFor="cep" text="cep"/>
+								<MaskInput id="cep" mask="99999-999" placeholder="Digite o CEP"/>
+								<Button width="50%" text="Pesquisar" press="buscaCep"/>
+								<Label labelFor="logradouro" text="Logradouro" visible="{layout>/isValido}"/>
+								<Input width="50%" value="{/logradouro}" visible="{layout>/isValido}"/>
+								<Label labelFor="bairro" text="bairro" visible="{layout>/isValido}"/>
+								<Input width="50%" value="{/bairro}" visible="{layout>/isValido}"/>
+								<Label labelFor="uf" text="uf" visible="{layout>/isValido}"/>
+								<Input width="50%" value="{/uf}" visible="{layout>/isValido}"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
